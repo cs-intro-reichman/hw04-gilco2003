@@ -39,20 +39,22 @@ public class MyString {
         if(str1.equals("") && !str2.equals(""))
             return false;
         boolean flag = true;
-        str1 = lowerCase(str1);
-        str2 =lowerCase(str2);
+       // str1 = lowerCase(str1);
+      //  str2 = lowerCase(str2);
         if(str1.equals(str2))
             return true;
         for(int i = 0; i <= str1.length() - str2.length(); i++) {
             flag = true;
             for(int j = 0; j < str2.length(); j++)
-                if(str1.charAt(i + j) != str2.charAt(j))
+                if(str1.charAt(i + j) != str2.charAt(j)) {
                     flag = false;
+                    break;
+                }
 
             if(flag)
                 return flag;
         }
       
-        return flag;
+        return false;
     }
 }
