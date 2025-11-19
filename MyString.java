@@ -43,7 +43,7 @@ public class MyString {
         str2 =lowerCase(str2);
         if(str1.equals(str2))
             return true;
-        for(int i = 0; i< str1.length()- str2.length(); i++) {
+        for(int i = 0; i <= str1.length() - str2.length(); i++) {
             flag = true;
             for(int j = 0; j < str2.length(); j++)
                 if(str1.charAt(i + j) != str2.charAt(j))
