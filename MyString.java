@@ -22,7 +22,7 @@ public class MyString {
             return str;
         String lowerCase = "";
         for(int i = 0; i <str.length(); i++){
-            if(str.charAt(i) > 'A' && str.charAt(i) < 'Z')
+            if(str.charAt(i) >= 'A' && str.charAt(i) <= 'Z')
                 lowerCase +=(char)(str.charAt(i) + 32);
             else
                 lowerCase += str.charAt(i);
@@ -32,13 +32,17 @@ public class MyString {
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
-        boolean flag = true;
           if(str2.equals(""))
             return true;
         if(str1.length() < str2.length())
             return false;
         if(str1.equals("") && !str2.equals(""))
             return false;
+        boolean flag = true;
+        str1 = lowerCase(str1);
+        str2 =lowerCase(str2);
+        if(str1.equals(str2))
+            return true;
         for(int i = 0; i< str1.length()- str2.length(); i++) {
             flag = true;
             for(int j = 0; j < str2.length(); j++)
