@@ -1,3 +1,5 @@
+import javax.print.DocFlavor.STRING;
+
 public class KeywordsDetector {
     public static void main(String[] args) {
         String[] sentences = {
@@ -17,10 +19,52 @@ public class KeywordsDetector {
         String[] keywords = {"synergy", "disrupt", "leverage", "Paradigm", "transform"};
         detectAndPrint(sentences, keywords);
     }
+    //counts how many spaces there are in a sentence
+    public static int countSpaces(String str){
+        int count = 0;
+        for(int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == ' ') {
+                count++;
+            }
+        }
+        return count;
+    }
+    //recieves a sentence and returns an array of all the words in said sentence.
+    public static String[] spiltSentnce(String str) {
+        int j = 0;
+        String[] spilt = new String[countSpaces(str) + 1];
+        spilt[j] = "";
+        for(int i = 0; i < str.length(); i++) {
+            if(str.charAt(i) != ' ') {
+                spilt[j] = spilt[j] + str.charAt(i);
+            }
+             else {
+                j++;
+                spilt[j] = "";
+             }
+
+        }
+        return spilt;
+    }
+    //checks if a word is in a sentence
+    public static boolean isInASentence(String[] sentence, String word) {
+        for(int i = 0; i < sentence.length; i++){
+            if(sentence[i].toLowerCase().equals(word.toLowerCase()))
+                return true;
+        }
+        return false;
+    }
 
     // Iterates through all the sentences.
     // If a sentence contains one or more of the kewords, prints it.
     public static void detectAndPrint(String[] sentences, String[] keywords) {
-        // Replace this comment with your code
+        String[] temp;
+        for(int i = 0; i < sentences.length; i++) { 
+            temp = spiltSentnce(sentences[i]);
+            for(int j = 0; j < keywords.length; j++ )
+            if (isInASentence(temp, keywords[j])) {
+                System.out.println(sentences[i]);
+            }
+            
     }
-}
+}}

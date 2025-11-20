@@ -124,7 +124,6 @@ public class TesterArrayCharOps {
     private static void testHashCode() {
         int num_tests = 3;
         System.out.println("Testing 'hashCode':");
-
         char[] arr1 = {'a'};
         char[] arr2 = "lemon".toCharArray();
         char[] arr3 = {};
