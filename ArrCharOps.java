@@ -2,7 +2,7 @@
  *  The library also features a string comparison method. */
 public class ArrCharOps {
     public static void main(String[] args) {
-        String str = "clearly";
+     /*    String str = "clearly";
         char[] arr1 = {'c','l','e','a','r','l','y'};
         char[] arr2 = {'U','n','d','e','r','s','t', 'o', 'o', 'd'};
         System.out.println(str);  // Prints the string
@@ -20,7 +20,7 @@ public class ArrCharOps {
         System.out.println(compareTo("apple", "applepie"));
         System.out.println(compareTo("Zoo", "zoo"));
         System.out.println(hashCode(arr1));
-        System.out.println(hashCode(arr2));
+        System.out.println(hashCode(arr2));*/
     }
 
     /** Prints the given array of characters, and moves the cursor to the next line.
