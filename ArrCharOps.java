@@ -8,7 +8,6 @@ public class ArrCharOps {
         System.out.println(str);  // Prints the string
         println(arr1);            // Prints an array of characters
         System.out.println(charAt(arr1,2));      
-        System.out.println(indexOf(arr1,'l'));  
         System.out.println(indexOf(arr1,'l',3)); 
         System.out.println(lastIndexOf(arr1, 'l'));
         System.out.println(concat(arr1, arr2));
