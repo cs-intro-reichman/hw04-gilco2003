@@ -156,11 +156,13 @@ public class ArrCharOps {
     public static int compareTo(String str1, String str2) {
         char[] arr1 = toChar(str1), arr2 = toChar(str2);
         boolean flag = true;
+        //Checking for extreme cases
         if(equals(arr1, arr2))
             return 0;
         if(str2.equals("") || str1.equals(""))
             return -2;
         int minLength = Math.min(str1.length(), str2.length());
+        //checking if arr1 is lexisomething smaller than arr2
         if(arr1.length < arr2.length) {
             for(int i =  0; i < minLength; i++) {
                 if (arr1[i] > arr2[i]) {
@@ -171,6 +173,8 @@ public class ArrCharOps {
             return -1;
         }
        flag = true;
+       //checking if arr2 is lexisomething smaller than arr1
+
         for(int i =  0; i < minLength; i++) {
             if (arr1[i] < arr2[i]) {
                     flag = false;         
@@ -180,19 +184,11 @@ public class ArrCharOps {
             return 1;
         return -2;
         }
+        //converts strings to an array of characters.
     public static char[] toChar(String str){
         char[] c = new char[str.length()];
         for(int i = 0; i< str.length(); i++)
             c[i] = str.charAt(i);
         return c;
     }
-        public static char[] shorterCharArr(char[] c1, char[] c2){
-            if(c1.length < c2.length)
-                return c1;
-        return c2;
-    }
-          public static char[] longerrCharArr(char[] c1, char[] c2){
-            if(c1.length > c2.length)
-                return c1;
-        return c2;
-          }}
+}

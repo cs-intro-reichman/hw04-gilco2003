@@ -19,12 +19,7 @@ public class KeywordsDetector {
         String[] keywords = {"synergy", "disrupt", "leverage", "Paradigm", "transform"};
         detectAndPrint(sentences, keywords);
     }
-     public static char[] toChar(String str){
-        char[] c = new char[str.length()];
-        for(int i = 0; i< str.length(); i++)
-            c[i] = str.charAt(i);
-        return c;
-    }
+    //counts how many spaces there are in a sentence
     public static int countSpaces(String str){
         int count = 0;
         for(int i = 0; i < str.length(); i++) {
@@ -34,6 +29,7 @@ public class KeywordsDetector {
         }
         return count;
     }
+    //recieves a sentence and returns an array of all the words in said sentence.
     public static String[] spiltSentnce(String str) {
         int j = 0;
         String[] spilt = new String[countSpaces(str) + 1];
@@ -50,16 +46,13 @@ public class KeywordsDetector {
         }
         return spilt;
     }
+    //checks if a word is in a sentence
     public static boolean isInASentence(String[] sentence, String word) {
         for(int i = 0; i < sentence.length; i++){
             if(sentence[i].toLowerCase().equals(word.toLowerCase()))
                 return true;
         }
         return false;
-    }
-    public static void printArray(String[] strArr){
-        for(int i = 0; i < strArr.length; i++)
-            System.out.print(strArr[i]);
     }
 
     // Iterates through all the sentences.

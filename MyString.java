@@ -32,6 +32,7 @@ public class MyString {
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
+        //handling extreme cases.
           if(str2.equals(""))
             return true;
         if(str1.length() < str2.length())
@@ -39,8 +40,6 @@ public class MyString {
         if(str1.equals("") && !str2.equals(""))
             return false;
         boolean flag = true;
-       // str1 = lowerCase(str1);
-      //  str2 = lowerCase(str2);
         if(str1.equals(str2))
             return true;
         for(int i = 0; i <= str1.length() - str2.length(); i++) {

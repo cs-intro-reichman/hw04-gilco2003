@@ -56,6 +56,7 @@ public class TesterArrayCharOps {
         char[] arr1 = "You are a wizard Harry.".toCharArray();
 
         boolean test1 = ArrCharOps.indexOf(arr1, 'w') == 10;
+        System.out.println(ArrCharOps.indexOf(arr1, 'w'));
         boolean test2 = ArrCharOps.indexOf(arr1, 'w', 5) == 10;
         boolean test3 = ArrCharOps.indexOf(arr1, 'w', 12) == -1;
         boolean test4 = ArrCharOps.indexOf(arr1, 'G') == -1;
